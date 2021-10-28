@@ -1,0 +1,30 @@
+.list-todo-content {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  .todo-child {
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  &--add {
+    background-color: #6a5af9;
+    margin-left: 10px;
+  }
+  &--edit {
+    background-color: #ff6651;
+    margin: 0 10px;
+  }
+  &--dele {
+    background-color: crimson;
+  }
+}
