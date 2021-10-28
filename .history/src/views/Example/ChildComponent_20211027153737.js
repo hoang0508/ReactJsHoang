@@ -1,5 +1,5 @@
 import React from "react";
-import "./Demo.scss";
+
 class ChildComponent extends React.Component {
   // re-render
   state = {
@@ -12,7 +12,6 @@ class ChildComponent extends React.Component {
   };
   handleOnclickDelete = (job) => {
     console.log(">>> handleOnclickDelete: ", job);
-    this.props.deleteJob(job);
   };
   render() {
     // console.log("check props: ", this.props);
@@ -27,9 +26,7 @@ class ChildComponent extends React.Component {
       <>
         {showJobs === false ? (
           <div>
-            <button className="btn-show" onClick={() => this.handleShowHide()}>
-              Show
-            </button>
+            <button onClick={() => this.handleShowHide()}>Show</button>
           </div>
         ) : (
           <>

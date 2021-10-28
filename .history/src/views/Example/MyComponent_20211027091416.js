@@ -11,20 +11,8 @@ class MyComponent extends React.Component {
   };
 
   addNewJob = (job) => {
-    console.log("check job from parent", job);
-    let currentJobs = this.state.arrJobs;
-    currentJobs.push(job);
     this.setState({
-      // arrJobs: [...this.state.arrJobs, job]
-      arrJobs: currentJobs,
-    });
-  };
-
-  deleteJob = (job) => {
-    let currentJobs = this.state.arrJobs;
-    currentJobs = currentJobs.filter((item) => item.id !== job.id);
-    this.setState({
-      arrJobs: currentJobs,
+      arrJobs: this.state.arrJobs.push(job),
     });
   };
   /**
@@ -39,12 +27,9 @@ class MyComponent extends React.Component {
     console.log("call render", this.state);
     return (
       <>
-        <AddComponent addNewJob={this.addNewJob} />
+        <AddComponent />
 
-        <ChildComponent
-          arrJobs={this.state.arrJobs}
-          deleteJob={this.deleteJob}
-        />
+        <ChildComponent arrJobs={this.state.arrJobs} />
       </>
     );
   }

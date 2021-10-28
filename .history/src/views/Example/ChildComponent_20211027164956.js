@@ -1,5 +1,5 @@
 import React from "react";
-import "./Demo.scss";
+import "./Demo.css";
 class ChildComponent extends React.Component {
   // re-render
   state = {
