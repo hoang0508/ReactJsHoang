@@ -43,9 +43,7 @@ class ListTodo extends React.Component {
 
       this.setState({
         ListTodos: listTodosCoppy,
-        editTodo: {},
       });
-      toast.success("Update to do success!");
       return;
     }
     // edit

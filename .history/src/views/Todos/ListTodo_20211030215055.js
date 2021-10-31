@@ -29,26 +29,6 @@ class ListTodo extends React.Component {
   };
 
   handleEditTodo = (todo) => {
-    let { editTodo, ListTodos } = this.state;
-
-    let isEmptyObj = Object.keys(editTodo).length === 0;
-    // SAVE
-    if (isEmptyObj === false && editTodo.id === todo.id) {
-      let listTodosCoppy = [...ListTodos];
-      //Find index of specific object using findIndex method.
-      let objIndex = ListTodos.findIndex((item) => item.id === todo.id);
-
-      //Update object's name property.
-      listTodosCoppy[objIndex].title = editTodo.title;
-
-      this.setState({
-        ListTodos: listTodosCoppy,
-        editTodo: {},
-      });
-      toast.success("Update to do success!");
-      return;
-    }
-    // edit
     this.setState({
       editTodo: todo,
     });
@@ -103,9 +83,7 @@ class ListTodo extends React.Component {
                       className="button button--edit"
                       onClick={() => this.handleEditTodo(item)}
                     >
-                      {isEmptyObj === false && editTodo.id === item.id
-                        ? "Save"
-                        : "Edit"}
+                      Edit
                     </button>
                     <button
                       className="button button--dele"

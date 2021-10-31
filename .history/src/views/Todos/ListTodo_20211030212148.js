@@ -29,43 +29,15 @@ class ListTodo extends React.Component {
   };
 
   handleEditTodo = (todo) => {
-    let { editTodo, ListTodos } = this.state;
-
-    let isEmptyObj = Object.keys(editTodo).length === 0;
-    // SAVE
-    if (isEmptyObj === false && editTodo.id === todo.id) {
-      let listTodosCoppy = [...ListTodos];
-      //Find index of specific object using findIndex method.
-      let objIndex = ListTodos.findIndex((item) => item.id === todo.id);
-
-      //Update object's name property.
-      listTodosCoppy[objIndex].title = editTodo.title;
-
-      this.setState({
-        ListTodos: listTodosCoppy,
-        editTodo: {},
-      });
-      toast.success("Update to do success!");
-      return;
-    }
-    // edit
     this.setState({
       editTodo: todo,
-    });
-  };
-
-  handleOnchangeEditTodo = (event) => {
-    let editTodoCoppy = { ...this.state.editTodo };
-    editTodoCoppy.title = event.target.value;
-    this.setState({
-      editTodo: editTodoCoppy,
     });
   };
   render() {
     let { ListTodos, editTodo } = this.state;
     // let listTodos = this.state.listTodos;
     let isEmptyObj = Object.keys(editTodo).length === 0;
-    // console.log(isEmptyObj);
+    console.log(isEmptyObj);
     return (
       <div className="list-todo-container">
         <AddTodo addNewTodo={this.addNewTodo} />
@@ -75,37 +47,15 @@ class ListTodo extends React.Component {
             ListTodos.map((item, index) => {
               return (
                 <div className="todo-child" key={item.id}>
-                  {isEmptyObj === true ? (
-                    <span>
-                      {index + 1} - {item.title}
-                    </span>
-                  ) : (
-                    <>
-                      {editTodo.id === item.id ? (
-                        <span>
-                          {index + 1} -{" "}
-                          <input
-                            value={editTodo.title}
-                            onChange={(event) =>
-                              this.handleOnchangeEditTodo(event)
-                            }
-                          />
-                        </span>
-                      ) : (
-                        <span>
-                          {index + 1} - {item.title}
-                        </span>
-                      )}
-                    </>
-                  )}
+                  <span>
+                    {index + 1} - {item.title}
+                  </span>
                   <div class="todo-btn">
                     <button
                       className="button button--edit"
                       onClick={() => this.handleEditTodo(item)}
                     >
-                      {isEmptyObj === false && editTodo.id === item.id
-                        ? "Save"
-                        : "Edit"}
+                      Edit
                     </button>
                     <button
                       className="button button--dele"

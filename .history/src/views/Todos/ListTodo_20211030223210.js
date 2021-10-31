@@ -32,21 +32,14 @@ class ListTodo extends React.Component {
     let { editTodo, ListTodos } = this.state;
 
     let isEmptyObj = Object.keys(editTodo).length === 0;
-    // SAVE
+    // save
     if (isEmptyObj === false && editTodo.id === todo.id) {
       let listTodosCoppy = [...ListTodos];
       //Find index of specific object using findIndex method.
       let objIndex = ListTodos.findIndex((item) => item.id === todo.id);
 
       //Update object's name property.
-      listTodosCoppy[objIndex].title = editTodo.title;
-
-      this.setState({
-        ListTodos: listTodosCoppy,
-        editTodo: {},
-      });
-      toast.success("Update to do success!");
-      return;
+      listTodosCoppy[objIndex].title = "Laila";
     }
     // edit
     this.setState({

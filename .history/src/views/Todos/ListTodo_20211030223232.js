@@ -39,14 +39,7 @@ class ListTodo extends React.Component {
       let objIndex = ListTodos.findIndex((item) => item.id === todo.id);
 
       //Update object's name property.
-      listTodosCoppy[objIndex].title = editTodo.title;
-
-      this.setState({
-        ListTodos: listTodosCoppy,
-        editTodo: {},
-      });
-      toast.success("Update to do success!");
-      return;
+      listTodosCoppy[objIndex].title = editTodo;
     }
     // edit
     this.setState({
