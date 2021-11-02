@@ -8,7 +8,6 @@ import ListUser from "./Users/ListUser";
 import Nav from "./Nav/Nav";
 import Home from "./Example/Home";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import DetailUser from "./Users/DetailUser";
 
 /**
  * 2 components: class component / function component (function, arrow)
@@ -34,11 +33,8 @@ function App() {
             <Route path="/about">
               <MyComponent />
             </Route>
-            <Route path="/user" exact>
+            <Route path="/user">
               <ListUser />
-            </Route>
-            <Route path="/user/:id">
-              <DetailUser />
             </Route>
           </Switch>
         </header>{" "}

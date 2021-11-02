@@ -34,7 +34,7 @@ function App() {
             <Route path="/about">
               <MyComponent />
             </Route>
-            <Route path="/user" exact>
+            <Route path="/user">
               <ListUser />
             </Route>
             <Route path="/user/:id">

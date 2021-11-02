@@ -15,7 +15,7 @@ class Nav extends React.Component {
           About
         </NavLink>
         <NavLink to="/user" activeClassName="active">
-          Users
+          User
         </NavLink>
         {/* <a href="/todo">Todos</a>
         <a href="/about">About</a> */}
