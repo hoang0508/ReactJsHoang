@@ -23,7 +23,7 @@ function App() {
           {/* <p> Hello world with Reactjs huy hoang</p> <MyComponent /> */}
           {/* <ListTodo /> */}
           <Switch>
-            <Route path="/" exact>
+            <Route path="/">
               <Home />
             </Route>
             <Route path="/todo">

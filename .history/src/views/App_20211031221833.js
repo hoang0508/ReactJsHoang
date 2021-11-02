@@ -22,17 +22,7 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
           {/* <p> Hello world with Reactjs huy hoang</p> <MyComponent /> */}
           {/* <ListTodo /> */}
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/todo">
-              <ListTodo />
-            </Route>
-            <Route path="/about">
-              <MyComponent />
-            </Route>
-          </Switch>
+          <Home />
         </header>{" "}
         <ToastContainer
           position="top-right"
