@@ -15,9 +15,7 @@ class Home extends React.Component {
     console.log(">> check user delete", user);
     this.props.deleteUserRedux(user);
   };
-  handleCreateUser = () => {
-    this.props.addUserRedux();
-  };
+  handleCreateUser = () => {};
   render() {
     console.log(">> check props redux: ", this.props.dataRedux);
     let ListUser = this.props.dataRedux;

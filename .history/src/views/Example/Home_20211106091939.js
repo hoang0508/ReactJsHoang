@@ -11,13 +11,7 @@ class Home extends React.Component {
     // }, 3000);
   }
   // HOC: higher order component
-  handleDeleteUser = (user) => {
-    console.log(">> check user delete", user);
-    this.props.deleteUserRedux(user);
-  };
-  handleCreateUser = () => {
-    this.props.addUserRedux();
-  };
+  handleDeleteUser = (user) => {};
   render() {
     console.log(">> check props redux: ", this.props.dataRedux);
     let ListUser = this.props.dataRedux;
@@ -33,12 +27,11 @@ class Home extends React.Component {
             ListUser.map((item, index) => {
               return (
                 <div key={item.id}>
-                  {index + 1} - {item.name} &nbsp;{" "}
+                  {index + 1} - {item.name}{" "}
                   <span onClick={() => this.handleDeleteUser(item)}>x</span>
                 </div>
               );
             })}
-          <button onClick={() => this.handleCreateUser()}>Add new</button>
         </div>
       </>
     );
@@ -51,12 +44,4 @@ const mapStateToProps = (state) => {
   return { dataRedux: state.users };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    deleteUserRedux: (userDelete) =>
-      dispatch({ type: "DELETE_USER", payload: userDelete }),
-    addUserRedux: () => dispatch({ type: "CREATE_USER" }),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Color(Home));
+export default connect(mapStateToProps)(Color(Home));
